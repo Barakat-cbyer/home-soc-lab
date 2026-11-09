@@ -6,6 +6,10 @@ I built this Home SOC lab to have my own environment where I can practice monito
 
 For the setup, I used Hyper-V to run Ubuntu Server and installed Wazuh as the main security monitoring platform. My Windows 11 system is connected to Wazuh as the monitored endpoint.
 
+## Hyper-V Setup
+
+![Hyper-V enabled](hyperv-enabled.png)
+
 ## Lab Setup
 
 - Windows 11 Pro
@@ -16,7 +20,7 @@ For the setup, I used Hyper-V to run Ubuntu Server and installed Wazuh as the ma
 - 7 GB RAM
 - 60 GB virtual disk
 - Windows Wazuh Agent
-
+  
 ## Architecture
 
 ```text
@@ -37,17 +41,33 @@ Monitoring & Investigation
 
 I created an Ubuntu Server VM in Hyper-V and configured it as my SOC server. I also expanded the Ubuntu storage and set up SSH access so I could manage the server remotely.
 
+## Ubuntu SOC Server VM
+
+![Home SOC VM setup](home-SOC-Summary.png)
+
 I then installed Wazuh, including the manager, indexer, and dashboard.
 
 My first installation got stuck while starting the Wazuh indexer. The VM was initially using 6 GB RAM. I tried increasing it to 8 GB, but my system could not allocate that much memory, so I changed it to 7 GB.
+
+## Troubleshooting
+
+![Memory allocation issue](vm-memory.png)
 
 After making the change, I ran the Wazuh installation again and it completed successfully.
 
 I then installed the Wazuh agent on my Windows 11 system and connected it to the server.
 
+## Wazuh Dashboard
+
+![Wazuh Dashboard](wazuh%20dashboard.png)
+
 The endpoint now appears as **Active** in the Wazuh dashboard.
 
 ## Current Status
+
+## Windows Endpoint Connected
+
+![Windows Agent Active](window%20agent%20active.png)
 
 The Home SOC environment is working successfully.
 
